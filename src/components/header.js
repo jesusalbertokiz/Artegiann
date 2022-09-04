@@ -19,6 +19,10 @@ const Header = () => {
   const changeClick = () => {
     setClick(!click);
   };
+  function active() {
+    let active = window.location.pathname;
+    return active;
+  }
   return (
     <header>
       <NavbarContainer click={click}>
@@ -40,22 +44,46 @@ const Header = () => {
               <FaBars />
             </NavIconsMobile>
           </NavLogo>
-
           <NavMenu>
             <NavMenuItem>
-              <NavMenuItemLink to="/">INICIO</NavMenuItemLink>
+              <NavMenuItemLink
+                className={active() === "/" ? "active" : ""}
+                to="/"
+              >
+                INICIO
+              </NavMenuItemLink>
             </NavMenuItem>
             <NavMenuItem>
-              <NavMenuItemLink to="/discover">DESCUBRE</NavMenuItemLink>
+              <NavMenuItemLink
+                className={active() === "/discover" ? "active" : ""}
+                to="/discover"
+              >
+                DESCUBRE
+              </NavMenuItemLink>
             </NavMenuItem>
             <NavMenuItem>
-              <NavMenuItemLink to="/blog">BLOG</NavMenuItemLink>
+              <NavMenuItemLink
+                className={active() === "/blog" ? "active" : ""}
+                to="/blog"
+              >
+                BLOG
+              </NavMenuItemLink>
             </NavMenuItem>
             <NavMenuItem>
-              <NavMenuItemLink to="/about-me">SOBRE MI</NavMenuItemLink>
+              <NavMenuItemLink
+                className={active() === "/about-me" ? "active" : ""}
+                to="/about-me"
+              >
+                SOBRE MI
+              </NavMenuItemLink>
             </NavMenuItem>
             <NavMenuItem>
-              <NavMenuItemLink to="/contact">CONTACTO</NavMenuItemLink>
+              <NavMenuItemLink
+                className={active() === "/contact" ? "active" : ""}
+                to="/contact"
+              >
+                CONTACTO
+              </NavMenuItemLink>
             </NavMenuItem>
           </NavMenu>
           <NavItemSocial>

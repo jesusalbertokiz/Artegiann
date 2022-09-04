@@ -89,6 +89,7 @@ export const NavItemSocial = styled.div`
     }
   }
   @media (max-width: 770px) {
+    padding-top: 1rem;
     padding-bottom: 3rem;
   }
 `;

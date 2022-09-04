@@ -26,3 +26,8 @@ li {
 h1 {
   color: white;
 }
+
+.active {
+  color: #fff;
+  border-bottom: 0.07rem solid #ffff;
+}
