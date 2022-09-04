@@ -2,64 +2,64 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaAlignJustify,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaBars } from "react-icons/fa";
 import "./styles/header.css";
+import {
+  NavbarContainer,
+  NavbarWrapper,
+  NavIconsMobile,
+  NavItemSocial,
+  NavLogo,
+  NavMenu,
+  NavMenuItem,
+  NavMenuItemLink,
+} from "./elements/header.elements";
 
 const Header = () => {
+  const [click, setClick] = React.useState(false);
+  const changeClick = () => {
+    setClick(!click);
+  };
   return (
-    <header className="header-container">
-      <nav className="nav">
-        <div className="flex-row">
-          <div className="nav-brand">
+    <header>
+      <NavbarContainer click={click}>
+        <NavbarWrapper>
+          <NavLogo>
             <Link to="/">
               <StaticImage
                 imgClassName="logo"
                 alt="Logo de la pagina"
                 src="../images/logo.png"
-                width={200}
+                width={155}
               />
             </Link>
-          </div>
-          <div className="toggle-collapse d-none">
-            <div className="toggle-icons">
-              <FaAlignJustify />
-            </div>
-          </div>
-          <div className="nav-menu-container">
-            <ul className="nav-menu">
-              <li className="nav-item">
-                <Link to="/" className="">
-                  Inicio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/discover" className="">
-                  Descubre
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/blog" className="">
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about-me" className="">
-                  Sobre Mi
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="">
-                  Contactame
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="nav-item-social">
+            <NavIconsMobile
+              onClick={() => {
+                changeClick();
+              }}
+            >
+              <FaBars />
+            </NavIconsMobile>
+          </NavLogo>
+
+          <NavMenu>
+            <NavMenuItem>
+              <NavMenuItemLink to="/">INICIO</NavMenuItemLink>
+            </NavMenuItem>
+            <NavMenuItem>
+              <NavMenuItemLink to="/discover">DESCUBRE</NavMenuItemLink>
+            </NavMenuItem>
+            <NavMenuItem>
+              <NavMenuItemLink to="/blog">BLOG</NavMenuItemLink>
+            </NavMenuItem>
+            <NavMenuItem>
+              <NavMenuItemLink to="/about-me">SOBRE MI</NavMenuItemLink>
+            </NavMenuItem>
+            <NavMenuItem>
+              <NavMenuItemLink to="/contact">CONTACTO</NavMenuItemLink>
+            </NavMenuItem>
+          </NavMenu>
+          <NavItemSocial>
             <a>
               <FaFacebook />
             </a>
@@ -69,9 +69,9 @@ const Header = () => {
             <a>
               <FaTwitter />
             </a>
-          </div>
-        </div>
-      </nav>
+          </NavItemSocial>
+        </NavbarWrapper>
+      </NavbarContainer>
     </header>
   );
 };
