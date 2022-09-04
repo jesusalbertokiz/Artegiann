@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { FaFacebook, FaInstagram, FaTwitter, FaBars } from "react-icons/fa";
-import "./styles/header.css";
 import {
   NavbarContainer,
   NavbarWrapper,
