@@ -20,8 +20,13 @@ const Header = () => {
     setClick(!click);
   };
   function active() {
-    let active = window.location.pathname;
-    return active;
+    let isBrowser = typeof window !== "undefined";
+    if (!isBrowser) {
+      return;
+    } else {
+      let active = window.location.pathname;
+      return active;
+    }
   }
   return (
     <header>
