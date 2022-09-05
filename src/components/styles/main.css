@@ -35,6 +35,9 @@ h4 {
 p {
   color: #adb9c7;
 }
+footer {
+  background-color: #330033d3;
+}
 
 footer div h4 {
   padding: 1.5rem 0 0.5rem;
@@ -53,6 +56,10 @@ footer div p {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.footer-content {
+  border: none;
 }
 
 main {
